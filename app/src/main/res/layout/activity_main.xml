@@ -43,13 +43,37 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp" />
 
-    <Button
-        android:id="@+id/btn1"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:onClick="calculationBMI"
-        android:text="검사하기" />
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:onClick="calculationBMI"
+            android:text="검사하기" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="5pt"
+            android:onClick="calculationBMI"
+            android:text="저장하기" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="5pt"
+            android:onClick="calculationBMI"
+            android:text="불러오기" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/result"
