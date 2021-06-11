@@ -2,6 +2,7 @@ package com.example.app_1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Spannable;
@@ -28,6 +29,16 @@ public class MainActivity extends AppCompatActivity {
         edt1 = (EditText) findViewById(R.id.edt1);  // 키를 입력받을 값
         edt2 = (EditText) findViewById(R.id.edt2); //  무게를 입력 받을 값
         result = (TextView) findViewById(R.id.result); //bmi지수를 계산하고 결과를 알려주는 값
+
+        Button btnNewActivity = (Button) findViewById(R.id.btn2);
+
+        btnNewActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 
