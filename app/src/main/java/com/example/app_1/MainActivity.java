@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     EditText edt1, edt2;
     TextView result;
     String calculation,resultBMI;
+    int result1;
 
 
 
@@ -36,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), SecondActivity.class);
+                intent.putExtra("result", result1);
                 startActivity(intent);
             }
         });
-
     }
 
     public void calculationBMI(View view) {
@@ -53,26 +54,31 @@ public class MainActivity extends AppCompatActivity {
 
         if(bmi < 18.5){                     //bmi계산식을 받아서 정해줌
             resultBMI = "저체중 입니다.";
+            result1 = 0;
             result.setTextColor(Color.GRAY);
 
         }
         else if (bmi >= 18.5 && bmi < 23){
             resultBMI = "정상 입니다.";
+            result1 = 1;
             result.setTextColor(Color.BLACK);
 
         }
         else if(bmi >= 23 && bmi <25){
             resultBMI = "과체중 입니다.";
+            result1 = 2;
             result.setTextColor(Color.BLUE);
 
         }
         else if(bmi >=25 && bmi <30){
             resultBMI = "비만 입니다.";
+            result1 = 3;
             result.setTextColor(Color.MAGENTA);
 
         }
         else{
             resultBMI = "고도비만 입니다";
+            result1 = 4;
             result.setTextColor(Color.RED);
 
         }
